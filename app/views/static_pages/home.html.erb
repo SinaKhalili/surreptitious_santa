@@ -1,0 +1,80 @@
+<% provide(:title, "Home") %>
+
+
+
+<div class="abstract">
+    <h2>Abstract</h2>
+    <p>An excersise in moderation, thoughtfulness, and festive spirit.</p>
+</div>
+<blockquote>
+    “Do You Think God Stays in Heaven Because He too Lives in Fear of What He's Created?”
+    <cite>— Ethan quoting <a href="https://en.wikipedia.org/wiki/Steve_Buscemi">Spy Kids 2</a></cite>
+</blockquote>
+<nav role="navigation" class="toc">
+    <h2>Contents</h2>
+    <ol>
+        <li>
+            <a href="#history">History</a>
+        </li>
+        <li>
+            <a href="#previous-work">Previous Work</a>
+        </li>
+        <li>
+            <a href="#great-job">Great job reading that last part</a>
+        </li>
+        <li>
+            <a href="#proposed-solution">Proposed solution</a>
+        </li>
+    </ol>
+</nav>
+
+<main>
+    <article>
+        <h2 id="history">History</h2>
+        <p>Brought to you by this exquisite exchange: </p>
+        <%= image_tag  "convo1.png" %>
+        <p> Sorry wrong picture, I meant this one:
+            <label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+            <input type="checkbox" id="sn-1" class="sidenote-toggle" />
+            <span class="sidenote">This is the oldest surviving document, though it is clearly not <a href="https://en.wikipedia.org/wiki/Etiology">etiological</a></span>
+        </p>
+        <%= image_tag  "convo2.png" %>
+
+        <h2 id="previous-work">Previous Work</h2>
+        <p> The primary benefit of the secret santa is the hidden nature of one’s beneficiary.</p>
+        <div class="lemma">The optimal secrecy in a secret santa group of size N is
+            is one where any user is has a 1 in N-1 chance of having any other
+            character as their potential secret santa.</div>
+        <div class="proof">Left as an exercise to the reader.</div>
+
+        <p> The traditional secret santa procedure is as follows:</p>
+        <ol>
+            <li>The group puts their names into a hat, possibly a Santa hat for added spiritual immersion.</li>
+            <li>The hat is passed around, beginning at the first person and moving down, with each person drawing a name at random from the hat.</li>
+            <li>If someone pulls their own name, they simply put the name back and pull another one out.</li>
+            <li>The final player takes the final remaining name in the hat</li>
+        </ol>
+        <p>We will now argue that this is not a perfect random procedure as outlined in Lemma&nbsp;1. </p>
+        <div class="proof">
+            <p>Everytime a self-pull is made, information is leaked to all players, completely ruining the perfect-random secrecy. We provide some examples.</p>
+
+            <p>Say you are the <i>i</i><sup>th</sup> person to pull from the hat. If you pull your own name, you have now
+                confirmed that all <i>i</i> - 1 players who pulled from the hat before are <b>not</b> your secret santa, and your secret santa must be one of the N - <i>i</i> remaining
+                players.</p>
+
+            <p>Say you see someone self-pull and they are second-from-last. Then the final player will be the secret santa of this
+                second from last player.</p>
+
+            <p>Say you were first, and got some random name. Then someone self-pulls at postition k. Now you know all players between yourself and player k
+                have higher probability to be your secret santa than people after position k. This is because you now know they did not pull player k.</p>
+        </div>
+
+        <h2 id="great-job">Great job reading that last part</h2>
+        <%= image_tag  "sponge.jpg" %>
+
+        <h2 id="proposed-solution">Proposed Solution</h2>
+        <p> We put forth the following solution: </p>
+        <p> Every time a single self-pull is made, the whole procedure begins again, from scratch. </p>
+        <div class="proof"> Left as an exercise to the reader </div>
+    </article>
+</main>

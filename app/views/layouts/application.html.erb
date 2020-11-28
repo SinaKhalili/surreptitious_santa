@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HelloApp</title>
+
+<head>
+    <title><%= yield(:title) %> | Surreptitious Santa</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/latex.css/style.min.css" />
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
+    <h1>Surreptitious Santa</h1>
+    <p class="author">
+        Saint Nickelback<br>
+        December, 2020<br>
+        <a href="/">Home</a> | <a href="/users">Users</a> |
+        <% if signed_in? %>
+        <a href="/my_account">My Account</a>(<%= current_user.email %>)
+        <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Sign in', sign_in_path %>
+        <% end %>
+    </p>
+    <div id="flash">
+        <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+    </div>
+
     <%= yield %>
-  </body>
+</body>
+
 </html>

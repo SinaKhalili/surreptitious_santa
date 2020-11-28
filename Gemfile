@@ -10,6 +10,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "clearance", '~> 2.3.0'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

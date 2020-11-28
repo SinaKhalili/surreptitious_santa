@@ -1,0 +1,20 @@
+<div id="clearance" class="sign-up">
+    <h2><%= t(".title") %></h2>
+
+    <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+        <%= form.submit %>
+    </div>
+
+    <h3> A note on passwords </h3>
+    <p> In case you were concerned, rest assured these passwords are
+        <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salted</a> and
+        <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">hashed</a> before
+        they hit the servers. In non-loser-speak this means your password plaintext isn't stored.
+    <div class="other-links">
+        Would you like to <%= link_to t(".sign_in"), sign_in_path %> instead my good friend?
+    </div>
+    <% end %>
+</div>
