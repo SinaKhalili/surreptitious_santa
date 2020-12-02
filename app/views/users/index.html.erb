@@ -17,7 +17,7 @@
         <tr>
             <td><%= link_to user.profile.username, user %></td>
             <td><%= user.email %></td>
-            <td><%= user.profile.bio %></td>
+            <td><%= user.profile.bio.gsub(/\n/, '<br/>').html_safe %></td>
         </tr>
         <% end %>
     </tbody>
