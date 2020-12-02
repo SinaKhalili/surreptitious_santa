@@ -1,4 +1,7 @@
 <h1> <%= @user.profile.username %> </h1>
+
+<%= render partial: 'profile_pic', locals: {pic_url: @user.profile.pic_url} %>
+
 <p>
     <strong>Email:</strong>
     <%= @user.email %>

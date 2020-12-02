@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1> Me </h1>
+<%= render partial: 'profile_pic', locals: {pic_url: @user.profile.pic_url} %>
+
 <p>
     <strong>Email:</strong>
     <%= @user.email %>

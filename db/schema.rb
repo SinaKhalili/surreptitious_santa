@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_001901) do
+ActiveRecord::Schema.define(version: 2020_12_02_060836) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_001901) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "santa_id"
+    t.string "pic_url"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
