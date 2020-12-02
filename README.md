@@ -1,24 +1,11 @@
-# README
+# Surreptitious Santa 🎅
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Helloooo and welcome to the Surreptitious Santa, a secret santa system on Rails!
 
-Things you may want to cover:
+## Live demo
 
-* Ruby version
+Check it [out](http://santa.sinakhalili.com/)
 
-* System dependencies
+## Screenshot
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](./app/assets/images/webscreen.png)
