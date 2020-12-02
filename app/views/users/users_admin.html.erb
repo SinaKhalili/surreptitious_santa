@@ -8,7 +8,8 @@
             <th>Name</th>
             <th>Email</th>
             <th>Bio</th>
-            <th colspan="3"></th>
+            <th>Santa_id</th>
+            <th colspan="4"></th>
         </tr>
     </thead>
 
@@ -18,14 +19,14 @@
             <td><%= link_to user.profile.username, user %></td>
             <td><%= user.email %></td>
             <td><%= user.profile.bio %></td>
+            <td><%= user.profile.santa_id %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
 
 <br>
-<% if signed_in? %>
-<%= link_to 'My account', "/my_account"%>
-<% else %>
-<%= link_to 'Create account?', "/sign_up" %>
-<% end %>
+
+<%= link_to 'New User', "/sign_up" %>

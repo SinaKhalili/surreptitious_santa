@@ -16,10 +16,16 @@
     <p class="author">
         Saint Nickelback<br>
         December, 2020<br>
-        <a href="/">Home</a> | <a href="/users">Users</a> |
+        <a href="/">Home</a> | <a href="/rules">Rules</a> | <a href="/users">Users</a> |
         <% if signed_in? %>
         <a href="/my_account">My Account</a>(<%= current_user.email %>)
         <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        <% if current_user.profile.bio == nil %>
+        <br>
+        <hr>
+        👉 Make sure to <%= link_to  "Update your profile", "/edit_profile" %> 👈
+        <hr>
+        <% end %>
         <% else %>
         <%= link_to 'Sign in', sign_in_path %>
         <% end %>

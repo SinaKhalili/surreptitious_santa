@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Me </h1>
+<p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+</p>
+<hrr>
+    <p>
+        <strong>Username:</strong>
+        <%= @user.profile.username %>
+    </p>
+    <hr>
+    <p>
+        <strong>Bio</strong> <br>
+        <%= @user.profile.bio %>
+    </p>
+    <hr>
+    <p>
+        <strong> Prefers </strong><br>
+        <%= @user.profile.prefers %>
+    </p>
+    <hr>
+    Would you like to <%= link_to 'edit profile📝', "/edit_profile" %>?
+
+    <% if @user.profile.santa_id != nil %>
+    <h2> GIFTING </h2>
+    <p>
+        🎁 You should buy a gift for... <%= link_to "this idiot", user_path(@user.profile.santa_id) %> 🎁
+    </p>
+    <% end %>
